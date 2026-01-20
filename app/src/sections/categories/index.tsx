@@ -11,6 +11,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { CategoryCard } from "@/components/cards/category";
 
 export const CategoriesSection = () => {
   const [api, setApi] = useState<any>(null);
@@ -55,29 +56,12 @@ export const CategoriesSection = () => {
               <CarouselContent>
                 {CATEGORIES.map(({ Icon, content, description, id, title }) => (
                   <CarouselItem key={id} className="basis-full">
-                    <div className="shadow-xl bg-white rounded-[8px] p-6 flex gap-5">
-                      <Image
-                        src={Icon}
-                        alt={content}
-                        width={40}
-                        height={40}
-                        className="w-[40px] h-[40px]"
-                      />
-
-                      <div className="flex flex-col gap-2.5">
-                        <div className="flex flex-col gap-0.5">
-                          <h4 className="text-[#403CCF] font-medium text-[18px] leading-[100%]">
-                            {title}
-                          </h4>
-                          <h3 className="text-[#242430] font-semibold text-[24px] leading-[100%]">
-                            {content}
-                          </h3>
-                        </div>
-                        <p className="text-[#242430CC] font-medium text-[14px] leading-[22px]">
-                          {description}
-                        </p>
-                      </div>
-                    </div>
+                    <CategoryCard
+                      Icon={Icon}
+                      content={content}
+                      description={description}
+                      title={title}
+                    />
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -105,32 +89,13 @@ export const CategoriesSection = () => {
           <div className="hidden lg:flex items-center justify-between gap-11">
             <div className="w-full flex justify-between gap-9">
               {CATEGORIES.map(({ Icon, content, description, id, title }) => (
-                <div
+                <CategoryCard
                   key={id}
-                  className="shadow-2xl bg-white rounded-[8px] p-6 flex gap-5 w-full"
-                >
-                  <Image
-                    src={Icon}
-                    alt={content}
-                    width={40}
-                    height={40}
-                    className="w-[40px] h-[40px]"
-                  />
-
-                  <div className="flex flex-col gap-2.5">
-                    <div className="flex flex-col gap-0.5">
-                      <h4 className="text-[#403CCF] font-medium text-[18px] leading-[100%]">
-                        {title}
-                      </h4>
-                      <h3 className="text-[#242430] font-semibold text-[24px] leading-[100%]">
-                        {content}
-                      </h3>
-                    </div>
-                    <p className="text-[#242430CC] font-medium text-[14px] leading-[22px]">
-                      {description}
-                    </p>
-                  </div>
-                </div>
+                  Icon={Icon}
+                  content={content}
+                  description={description}
+                  title={title}
+                />
               ))}
             </div>
 

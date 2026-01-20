@@ -16,7 +16,7 @@ export const BonusCard = ({
     <div
       key={id}
       className={cn(
-        "flex flex-col gap-7 pt-9 pb-7 px-8 rounded-[8px] bg-white w-full max-w-[327px] shadow-2xl",
+        "flex flex-col gap-7 pt-9 pb-7 px-8 rounded-[8px] bg-white w-full max-w-[327px] shadow-[0_4px_12px_rgba(0,0,0,0.1)]",
         index >= 2 ? "col-span-1 md:col-span-1" : "",
       )}
     >
